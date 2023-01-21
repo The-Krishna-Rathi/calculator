@@ -1,0 +1,52 @@
+button {
+  border: 1px solid #d6ed17ff;
+  background-color: #606060ff;
+  color: #d6ed17ff;
+  font-weight: 800;
+  font-size: larger;
+  padding: 2vh 2vw;
+  border-radius: 2px;
+  margin: 0.3rem;
+  width: 5vw;
+}
+
+.equals-btn {
+  background-color: #d6ed17ff;
+  color: #606060ff;
+  padding: 7vh 2vw;
+}
+
+button:hover {
+  background-color: #d6ed17ff;
+  color: #606060ff;
+}
+
+@media (max-width: 1200px) {
+  button {
+    width: 10.8vw;
+  }
+}
+
+@media (max-width: 900px) {
+  button {
+    width: 13vw;
+  }
+}
+
+@media (max-width: 750px) {
+  button {
+    width: 10.5vw;
+  }
+}
+
+@media (max-width: 500px) {
+  button {
+    width: 17vw;
+  }
+}
+
+@media (max-width: 400px) {
+  button {
+    width: 18vw;
+  }
+}

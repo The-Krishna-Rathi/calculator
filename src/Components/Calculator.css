@@ -1,0 +1,88 @@
+/* c1 = #d6ed17ff */
+/* c2 = #606060ff */
+
+.main-div {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #d6ed17ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cal-div {
+  height: 70vh;
+  width: 25vw;
+  background-color: #606060ff;
+  border: 8px solid rgb(76, 76, 76);
+  -webkit-box-shadow: 0px 8px 19px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 8px 19px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 8px 19px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.exp-display {
+  width: 90%;
+  text-align: end;
+  margin: auto;
+  padding: 10px;
+  color: #d6ed17ff;
+}
+
+.output-display {
+  width: 90%;
+  text-align: end;
+  font-size: 30px;
+  font-weight: 600;
+  color: #606060ff;
+  background-color: rgba(216, 237, 23, 0.9);
+  height: 6vh;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.button-section {
+  margin: auto;
+}
+
+@media (max-width: 1200px) {
+  .cal-div {
+    width: 50vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .cal-div {
+    width: 60vw;
+  }
+}
+
+@media (max-width: 750px) {
+  .cal-div {
+    width: 50vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .cal-div {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 400px) {
+  .cal-div {
+    width: 90vw;
+  }
+}

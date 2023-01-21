@@ -1,3 +1,12 @@
+## React-Calculator
+* It is a calculator application which provides basic calculation operations
+* It is responsive in nature i.e it resizes itself different sizes of devices
+* It uses react state management feature
+
+![calci](https://user-images.githubusercontent.com/74900144/213871873-24ca9bd3-05c9-40ee-a00c-7d6357e876d4.png)
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

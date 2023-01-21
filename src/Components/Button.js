@@ -1,7 +1,11 @@
 import "./Button.css";
 
 const Button = (props) => {
-  return <button className={props.className}>{props.children}</button>;
+  return (
+    <button className={props.className} onClick={props.onClick}>
+      {props.children}
+    </button>
+  );
 };
 
 export default Button;

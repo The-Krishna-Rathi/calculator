@@ -1,13 +1,32 @@
+import { useState } from "react";
 import Button from "./Button";
 import "./Calculator.css";
+import Evaluate from "./Postfix";
 
 const Calculator = () => {
+  const [expression, setExpression] = useState("");
+  const [result, setResult] = useState("");
+
+  const removeLastChar = () => {
+    const newExp = expression.slice(0, expression.length - 1);
+    setExpression(newExp);
+  };
+
+  const evaluate = () => {
+    setResult(Evaluate(expression));
+    // setExpression("");
+  };
+
   return (
     <div className="main-div">
       <div className="cal-div">
         <div className="display">
-          <div className="exp-display">123 + 73</div>
-          <div className="output-display">196</div>
+          <div className="exp-display">
+            {expression === "" ? "0" : expression}
+          </div>
+          <div className="output-display">
+            {result === "" ? expression : result}
+          </div>
         </div>
 
         <div className="button-section">
@@ -15,75 +34,112 @@ const Calculator = () => {
             <tbody>
               <tr>
                 <td>
-                  <Button>C</Button>
+                  <Button
+                    onClick={() => {
+                      setExpression("");
+                      setResult("");
+                    }}
+                  >
+                    C
+                  </Button>
                 </td>
                 <td>
-                  <Button>X</Button>
+                  <Button onClick={() => setExpression(expression + " * ")}>
+                    X
+                  </Button>
                 </td>
                 <td>
-                  <Button>
+                  <Button onClick={() => setExpression(expression + " / ")}>
                     <i className="fa-solid fa-divide"></i>
                   </Button>
                 </td>
                 <td>
-                  <Button>
+                  <Button onClick={removeLastChar}>
                     <i className="fa-solid fa-delete-left"></i>
                   </Button>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <Button>7</Button>
+                  <Button onClick={() => setExpression(expression + "7")}>
+                    7
+                  </Button>
                 </td>
                 <td>
-                  <Button>8</Button>
+                  <Button onClick={() => setExpression(expression + "8")}>
+                    8
+                  </Button>
                 </td>
                 <td>
-                  <Button>9</Button>
+                  <Button onClick={() => setExpression(expression + "9")}>
+                    9
+                  </Button>
                 </td>
                 <td>
-                  <Button>
+                  <Button onClick={() => setExpression(expression + " - ")}>
                     <i className="fa-solid fa-minus"></i>
                   </Button>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <Button>4</Button>
+                  <Button onClick={() => setExpression(expression + "4")}>
+                    4
+                  </Button>
                 </td>
                 <td>
-                  <Button>5</Button>
+                  <Button onClick={() => setExpression(expression + "5")}>
+                    5
+                  </Button>
                 </td>
                 <td>
-                  <Button>6</Button>
+                  <Button onClick={() => setExpression(expression + "6")}>
+                    6
+                  </Button>
                 </td>
                 <td>
-                  <Button>+</Button>
+                  <Button onClick={() => setExpression(expression + " + ")}>
+                    +
+                  </Button>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <Button>1</Button>
+                  <Button onClick={() => setExpression(expression + "1")}>
+                    1
+                  </Button>
                 </td>
                 <td>
-                  <Button>2</Button>
+                  <Button onClick={() => setExpression(expression + "2")}>
+                    2
+                  </Button>
                 </td>
                 <td>
-                  <Button>3</Button>
+                  <Button onClick={() => setExpression(expression + "3")}>
+                    3
+                  </Button>
                 </td>
                 <td rowSpan="2">
-                  <Button className="equals-btn">=</Button>
+                  <Button className="equals-btn" onClick={evaluate}>
+                    =
+                  </Button>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <Button>%</Button>
+                  <Button onClick={() => setExpression(expression + " % ")}>
+                    %
+                  </Button>
                 </td>
                 <td>
-                  <Button>0</Button>
+                  <Button onClick={() => setExpression(expression + "0")}>
+                    0
+                  </Button>
                 </td>
                 <td>
-                  <Button>.</Button>
+                  <Button onClick={() => setExpression(expression + ".")}>
+                    .
+                  </Button>
                 </td>
               </tr>
             </tbody>
